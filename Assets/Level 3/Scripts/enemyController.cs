@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class enemyController : MonoBehaviour
 {
-    public bool isFacingRight = true;
+    public bool isFacingRight = false;
     public float maxSpeed = 3f;
     public int health = 16;
     public int lives = 0;
@@ -38,12 +38,12 @@ public class enemyController : MonoBehaviour
     {
         if (this.isFacingRight == true)
         {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
         }
         else
         {
             this.GetComponent<Rigidbody2D>().velocity =
-                new Vector2(-maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+                new Vector2(maxSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
         }
     }
     //void OnTriggerEnter2D(Collider2D other)
@@ -96,9 +96,9 @@ public class enemyController : MonoBehaviour
         }
         else if (this.lives == 0 && this.health == 0)
         {
-            anim.Play("Base Layer.Dead", 0, 0.1f);
+           // anim.Play("Base Layer.Dead", 0, 0.1f);
             Debug.Log("Winner");
-            Destroy(this.gameObject, 0.9f);
+            Destroy(this.gameObject, 0.7f);
         }
         Debug.Log("Big Boss Health: " + this.health.ToString());
         Debug.Log("Big Boss Lives: " + this.lives.ToString());

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wall
   - Enemy
+  - Bullet
+  - Enemy1
+  - spike
   layers:
   - Default
   - TransparentFX

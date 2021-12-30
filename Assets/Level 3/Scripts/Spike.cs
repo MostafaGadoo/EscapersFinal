@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    private PlayerState p; 
+    private PlayerState p;
+    private int damage = 9;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class Spike : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
+            FindObjectOfType<PlayerState>().TakeDamage(damage);
             FindObjectOfType<levelManager>().RespawnPlayer();
             
         }

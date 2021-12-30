@@ -15,9 +15,9 @@ public class controller : MonoBehaviour
     public LayerMask whatIsGround;
     public bool grounded;
     private Animator anim;
-    //public KeyCode Return;
-    //public Transform Fire;
-    //public GameObject bullet;
+    public KeyCode Return;
+    public Transform Fire;
+    public GameObject bullet;
 
 
     // Use this for initialization
@@ -56,10 +56,10 @@ public class controller : MonoBehaviour
                 isFacingRight = true;
             }
         }
-        //if (Input.GetKeyDown(Return))
-        //{
-        //    Shoot();
-        //}
+        if (Input.GetKeyDown(Return))
+        {
+            Shoot();
+        }
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
         anim.SetBool("Grounded", grounded);
     }
@@ -68,18 +68,21 @@ public class controller : MonoBehaviour
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
-    void flip()
-    {
-        isFacingRight = !isFacingRight;
-        transform.Rotate(0f,180f,0f);
-    }
+   
+        void flip()
+        {
+            isFacingRight = !isFacingRight;
+            transform.Rotate(0f, 180f, 0f);
+        }
+        
+    
 
     void Jump()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
     }
-    //public void Shoot()
-    //{
-    //    Instantiate(bullet, Fire.position, Fire.rotation);
-    //}
+    public void Shoot()
+    {
+        Instantiate(bullet, Fire.position, Fire.rotation);
+    }
 }

@@ -73,18 +73,18 @@ public class PlayerState : MonoBehaviour
             this.health = this.health - damage;
             if (this.health < 0)
                 this.health = 0;
-            if (this.Lives > 0 && this.health == 0)
+            if (this.Lives > 0 && this.health <= 0)
             {
                 FindObjectOfType<levelManager>().RespawnPlayer();
                 this.health = 9;
                 this.Lives--;
             }
-            else if (this.Lives == 0 && this.health == 0)
+            else if (this.Lives == 0 && this.health <= 0)
             {
                 Debug.Log("GameOver");
-                anim.Play("Base Layer.Dead", 0, 0.2f);
-                //Destroy(this.gameObject, 1.7f);
-                Destroy(this.gameObject,1.7f);
+               // anim.Play("Base Layer.Dead", 0, 0.2f);
+                
+                Destroy(this.gameObject);
             }
             Debug.Log("Player Health: " + this.health.ToString());
             Debug.Log("Player Lives: " + this.Lives.ToString());

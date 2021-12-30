@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2094551113810447590}
   - component: {fileID: 6239509025118994268}
-  - component: {fileID: 8084054590416978701}
   - component: {fileID: 8165172077809049751}
   - component: {fileID: 1827168345110756384}
   - component: {fileID: 61526075718338572}
   - component: {fileID: 114967249263534780}
+  - component: {fileID: 375028418450520484}
   m_Layer: 0
   m_Name: floor_spike-removebg-preview
   m_TagString: Enemy
@@ -84,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8084054590416978701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8348388226671512772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7717e4eb23632c54282115a0767b0429, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFacingRight: 1
-  maxSpeed: 6
-  damage: 2
-  health: 20
 --- !u!50 &8165172077809049751
 Rigidbody2D:
   serializedVersion: 4
@@ -187,5 +171,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFacingRight: 1
   maxSpeed: 3
+  health: 6
+  lives: 0
   damage: 6
-  health: 20
+  healthUI: {fileID: 0}
+--- !u!114 &375028418450520484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348388226671512772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1234a0238946da34b866d3e40339e72c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFacingRight: 0
+  maxSpeed: 3
+  health: 6
+  lives: 0
+  damage: 3
+  healthUI: {fileID: 0}

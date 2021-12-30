@@ -19,7 +19,7 @@ public class bulletFinal : MonoBehaviour
         //if (enemy != null) {
         //    enemy.takeDamage(20);
         //}
-        if (hitInfo.tag == "Enemy")
+        if (hitInfo.tag == "Enemy1")
         {
             enemy.takeDamage(10);
             //Destroy(hitInfo.gameObject);

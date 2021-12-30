@@ -31,12 +31,15 @@ public class BulletController : MonoBehaviour
     {
         if (other.tag == "Enemy1")
         {
+            FindObjectOfType<enemyController>().takeDamage(damage);
+
             Destroy(this.gameObject);
         }
         if (other.tag == "Enemy")
         {
-           
+
             FindObjectOfType<enemyController>().TakeDamage(damage);
+           
 
             Destroy(this.gameObject);
         }
@@ -45,5 +48,21 @@ public class BulletController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        enemyController enemy = other.GetComponent<enemyController>();
+        //if (enemy != null) {
+        //    enemy.takeDamage(20);
+        //}
+        if (other.tag == "Enemy1")
+        {
+            enemy.takeDamage(damage);
+            //Destroy(hitInfo.gameObject);
+            Destroy(this.gameObject);
+            Debug.Log(other.name);
+        }
+        else if (other.tag == "Wall")
+        {
+            Destroy(this.gameObject);
+        }
     }
+    
 }
